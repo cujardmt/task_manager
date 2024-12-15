@@ -1,0 +1,51 @@
+<div class="tasks new">
+  <h2>Edit Task</h2>
+
+  <%= form_for(@task) do |f| %>
+    <div class="row mb-3">
+      <%= f.label :name, "Name", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: "form-control", id: "task_name" %>
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <%= f.label :description, "Description", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area :description, class: "form-control", id: "task_description" %>
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <%= f.label :category_id, "Category", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= f.collection_select :category_id, Category.all, :id, :name, 
+              { prompt: "Select a Category" }, 
+              { class: "form-select", id: "task_category" } %>
+      </div>
+    </div>
+    
+    <div class="row mb-3">
+      <%= f.label :priority, "Priority", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= f.collection_select :priority_id, Priority.all, :id, :name, 
+              { prompt: "Select a Category" }, 
+              { class: "form-select", id: "task_priority" } %>
+      </div>
+    </div>
+  
+    <div class="row mb-3">
+      <%= f.label :status, "Status", class: "col-sm-2 col-form-label" %>
+      <div class="col-sm-10">
+        <%= f.collection_select :status_id, Status.all, :id, :name, 
+              { prompt: "Select a Category" }, 
+              { class: "form-select", id: "task_status" } %>
+      </div>
+    </div>
+  
+    <div class="form-buttons">
+      <%= f.submit "Save Task", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+  
+</div>

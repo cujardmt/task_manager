@@ -1,0 +1,19 @@
+<h1>Login</h1>
+
+<%= form_with url: sessions_path, method: :post, local: true do |form| %>
+  <div class="mb-3">
+    <%= form.label :username, class: "form-label" %>
+    <%= form.text_field :username, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :password, class: "form-label" %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.submit "Log in", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<%= link_to "Back to Landing Page", root_path, class: "btn btn-link" %>

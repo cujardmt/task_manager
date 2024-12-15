@@ -1,0 +1,54 @@
+<h1>Tasks</h1>
+
+
+<p><%= link_to('Edit', edit_task_path(id: @task.id)) %></p>
+<p><%= link_to("Delete", delete_task_path, class: 'action delete') %></p>
+
+<%= link_to('Back', tasks_path)  %>
+<%= link_to('Home', main_index_path)  %>
+
+    <form>
+      <div class="row mb-3">
+        <label for="task_name" class="col-sm-2 col-form-label">Task Name</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="task_name" value="<%= @task.name %>">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="task_description" class="col-sm-2 col-form-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="task_description" value="<%= @task.description %>">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="task_category" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="task_category" value="<%= @task.category.name %>">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="task_priority" class="col-sm-2 col-form-label">Priority</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="priority" value="<%= @task.priority.name %>">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="task_status" class="col-sm-2 col-form-label">Status</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="task_status" value="<%= @task.status.name %>">
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <label for="task_due_date" class="col-sm-2 col-form-label">Due Date</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="task_due_date" value="<%= @task.due_date %>">
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
